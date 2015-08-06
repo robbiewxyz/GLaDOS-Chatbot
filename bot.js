@@ -1,41 +1,52 @@
 //Version
-var Version = '1.3.9';
-console.log("I'm running v." + Version);
-/**
- * Admin ID's
- */
-var admin = ['2934528', '3448149', '5081412', '5056380'];
-//Death (doesn't die when it starts)
-var death = 0;
-/**
- * Determine if an array contains a certain value
- */
-function arrayContains(array, value) {
-    return array.indexOf(value) > -1;
-}
-function randomArrayElement(array) {
-    return array[Math.floor(Math.random() * array.length)];
-}
-function InvalidMessageLength(message) {
-    this.message = message;
-    this.name = "InvalidMessageLength";
-}
-function sendMessage(messageString) {
-    if (messageString.length - 1 <= 400) {
-        document.getElementById("input").value = messageString;
-        document.getElementById("sayit-button").click();
-    } else {
-        throw new InvalidMessageLength("Length of message exceeded 400 characters.");
+var Version = '1.3.9'
+console.log("I'm running v." + Version)
+
+var GLaDOS = (function ($) {
+    
+    var GLaDOS = {}
+    
+    // user IDs for the users
+    GLaDOS.admins = ['2934528', '3448149', '5081412', '5056380']
+    
+    // whether we're dead (start alive)
+    GLaDOS.dead = false
+    
+    Array.prototype.pickRandom = function () {
+        return this [Math.floor (Math.random () * this.length)]
     }
-}
-function getLastPostedMessage() {
-    try {
-        var messageElements = document.getElementById("chat");
-        return messageElements.lastElementChild.children[1].lastElementChild.children[1].innerHTML;
-    } catch (error) {
-        return "";
+    
+    function InvalidMessageLength(message) {
+        this.message = message
+        this.name = "InvalidMessageLength"
     }
-}
+    
+    GLaDOS.sendMessage = function (messageString) {
+        if (messageString.length - 1 <= 400) {
+            document.getElementById("input").value = messageString
+            document.getElementById("sayit-button").click()
+        } else {
+            throw new InvalidMessageLength("Length of message exceeded 400 characters.")
+        }
+    }
+    
+    GLaDOS.getLastPostedMessage = function () {
+        try {
+            var messageElements = document.getElementById ("chat")
+            return messageElements.lastElementChild.children [1].lastElementChild.children [1].innerHTML
+        } catch (error) {
+            return ""
+        }
+    }
+    
+    GLaDOS.user = {};
+    GLaDOS.user.
+    
+}) (jQuery);
+
+
+
+
 function isAdmin() {
     var pos = admin.indexOf(getPersonID());
     if (pos == -1) {
