@@ -250,6 +250,8 @@ function SuperCommand(command, parameter) {
             break;
         case "start":
             return "I'm up and running";
+        case "utc":
+            return new Date ().toUTCString ();
         case "help":
             /**
              * For help
