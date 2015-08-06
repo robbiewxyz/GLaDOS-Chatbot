@@ -284,7 +284,7 @@ function SuperCommand(command, parameter) {
                 death = 1;
                 return "I'm down";
             } else {
-                return "I refuse too";
+                return "I refuse too (no priv!)";
             }
             break;
         default:
