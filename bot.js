@@ -1,10 +1,6 @@
 //Version
-var Version = '1.3.8';
+var Version = '1.3.9';
 console.log("I'm running v." + Version);
-/**
- * Private stuff
- */
-$pullPass = "NO!";//And yes, NO! is NOT the password
 /**
  * Admin ID's
  */
