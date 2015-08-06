@@ -215,7 +215,7 @@ function SuperCommand(command, parameter) {
             return "I'm running v." + Version;
         case "pull":
             if (isAdmin()) {
-                $.getScript("https://glados.byethost8.com/bot/script.php?pass="+$pullPass);
+                $.getScript('https://raw.githubusercontent.com/onlineth/GLaDOS-Chatbot/master/bot.js');
                 return "Pulled Latest";
             } else {
                 return "Sorry, you do not have the priv. to do that";
